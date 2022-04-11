@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: contoso-postgresql
@@ -26,6 +26,9 @@ spec:
         volumeMounts:
         - name: data
           mountPath: /var/lib/postgresql/
+  selector:
+    matchLabels:
+      app: contoso-postgresql
 ---
 apiVersion: v1
 kind: Service

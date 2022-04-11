@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: uaa-mysql
@@ -32,6 +32,9 @@ spec:
         volumeMounts:
         - name: data
           mountPath: /var/lib/mysql/
+  selector:
+    matchLabels:
+      app: uaa-mysql
 ---
 apiVersion: v1
 kind: Service

@@ -1,4 +1,6 @@
-FROM openjdk:8-jre-alpine
+FROM openjdk:8-jdk-oracle
+
+ENV TZ=Asia/Shanghai
 
 ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
     JHIPSTER_SLEEP=0 \

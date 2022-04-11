@@ -37,7 +37,7 @@ spec:
   selector:
     app: jhipster-registry
 ---
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: jhipster-registry
@@ -95,3 +95,6 @@ spec:
       - name: config-volume
         configMap:
           name: application-config
+  selector:
+    matchLabels:
+      app: jhipster-registry
